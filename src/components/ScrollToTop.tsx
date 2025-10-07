@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 // Resets scroll position to the top on every route change across the app
