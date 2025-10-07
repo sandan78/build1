@@ -126,9 +126,9 @@ export const DestinationCard = ({
     >
       <style>{`
         .destination-card-elite {
-          background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
+          background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
           border-radius: 24px;
-          border: 1px solid rgba(255, 255, 255, 0.12);
+          border: 1px solid rgba(255, 255, 255, 0.15);
           backdrop-filter: blur(20px) saturate(180%);
           -webkit-backdrop-filter: blur(20px) saturate(180%);
           width: 100%;
@@ -142,21 +142,23 @@ export const DestinationCard = ({
           position: relative;
           isolation: isolate;
           box-shadow: 
-            0 4px 16px rgba(255, 255, 255, 0.03),
-            0 1px 3px rgba(255, 255, 255, 0.02),
+            0 4px 20px rgba(0, 0, 0, 0.08),
+            0 1px 3px rgba(0, 0, 0, 0.04),
             inset 0 1px 0 rgba(255, 255, 255, 0.1);
         }
 
+        /* Enhanced hover effects */
         .destination-card-elite:hover {
-          transform: translateY(-10px) scale(1.015);
+          transform: translateY(-12px) scale(1.02);
           box-shadow: 
-            0 20px 40px rgba(255, 255, 255, 0.12),
-            0 12px 24px rgba(255, 255, 255, 0.08),
-            0 0 0 1px rgba(255, 255, 255, 0.25),
+            0 25px 50px rgba(0, 0, 0, 0.15),
+            0 15px 30px rgba(0, 0, 0, 0.1),
+            0 0 0 1px rgba(255, 255, 255, 0.2),
             inset 0 1px 0 rgba(255, 255, 255, 0.15);
-          border-color: rgba(255, 255, 255, 0.25);
+          border-color: rgba(255, 255, 255, 0.3);
         }
 
+        /* Image container with parallax effect */
         .destination-img-container {
           position: relative;
           height: 240px;
@@ -179,10 +181,11 @@ export const DestinationCard = ({
         }
 
         .destination-card-elite:hover .destination-img {
-          transform: scale(1.06);
-          filter: brightness(1.08) contrast(1.03);
+          transform: scale(1.08);
+          filter: brightness(1.1) contrast(1.05);
         }
 
+        /* Loading shimmer for image */
         .image-shimmer {
           position: absolute;
           top: 0;
@@ -192,7 +195,7 @@ export const DestinationCard = ({
           background: linear-gradient(
             90deg,
             transparent,
-            rgba(255, 255, 255, 0.15),
+            rgba(255, 255, 255, 0.2),
             transparent
           );
           animation: shimmer 2s infinite;
@@ -203,17 +206,19 @@ export const DestinationCard = ({
           100% { transform: translateX(400%); }
         }
 
+        /* Gradient overlay */
         .image-overlay {
           position: absolute;
           bottom: 0;
           left: 0;
           right: 0;
           height: 60%;
-          background: linear-gradient(transparent 0%, rgba(0, 0, 0, 0.4) 100%);
+          background: linear-gradient(transparent 0%, rgba(0, 0, 0, 0.5) 100%);
           z-index: 2;
           pointer-events: none;
         }
 
+        /* Content section */
         .destination-content-wrapper {
           padding: 24px;
           display: flex;
@@ -225,6 +230,7 @@ export const DestinationCard = ({
           background: transparent;
         }
 
+        /* Title with gradient text */
         .destination-title {
           font-size: 1.5rem;
           font-weight: 700;
@@ -245,6 +251,7 @@ export const DestinationCard = ({
           background-clip: text;
         }
 
+        /* Location with smooth animation */
         .destination-location {
           display: inline-flex;
           align-items: center;
@@ -261,6 +268,7 @@ export const DestinationCard = ({
           transform: translateX(2px);
         }
 
+        /* Description with elegant typography */
         .destination-description {
           font-size: 0.95rem;
           line-height: 1.6;
@@ -274,6 +282,7 @@ export const DestinationCard = ({
           transition: all 0.3s ease;
         }
 
+        /* Enhanced info grid */
         .destination-meta-grid {
           display: grid;
           grid-template-columns: 1fr;
@@ -304,6 +313,7 @@ export const DestinationCard = ({
           transform: scale(1.1);
         }
 
+        /* Enhanced buttons */
         .destination-actions {
           display: flex;
           gap: 12px;
@@ -325,10 +335,15 @@ export const DestinationCard = ({
           color: white;
         }
 
+        .action-btn::before {
+          content: none;
+        }
+
+        
         .action-btn:hover {
           transform: translateY(-2px);
           border-color: rgba(255, 255, 255, 0.3);
-          box-shadow: 0 6px 16px rgba(255, 255, 255, 0.1);
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
 
         .action-btn:active {
@@ -336,7 +351,7 @@ export const DestinationCard = ({
         }
       `}</style>
 
-      {/* Image Section */}
+      {/* Image Section with Enhanced Effects */}
       <div className="destination-img-container">
         {!imageLoaded && <div className="image-shimmer" />}
         <img
@@ -378,7 +393,9 @@ export const DestinationCard = ({
               className="action-btn"
               onClick={() => {
                 navigate(
-                  `/destination/${encodeURIComponent(country)}/${encodeURIComponent(name)}`
+                  `/destination/${encodeURIComponent(
+                    country
+                  )}/${encodeURIComponent(name)}`
                 );
                 setTimeout(() => {
                   window.scrollTo({ top: 0, behavior: "smooth" });
