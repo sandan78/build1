@@ -154,7 +154,7 @@ export const DestinationCard = ({
           border-color: rgba(255, 255, 255, 0.22);
           /* Soft luminous glow — not white, but warm ambient light */
           box-shadow: 
-            0 20px 50px -10px rgba(0, 0, 0, 0.08),
+            0 20px 50px -10px rgba(0, 0, 0, 0.8),
             0 0 0 1px rgba(255, 255, 255, 0.70),
             0 0 30px 8px rgba(255, 255, 255, 0.06),
             inset 0 1px 0 rgba(255, 255, 255, 0.12);
