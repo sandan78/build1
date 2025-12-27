@@ -26,10 +26,10 @@ export type Destination = {
   safetyLevel: "high" | "medium" | "low";
   bestTime: string;
   priceRange: "$" | "$$" | "$$$";
-  duration: string;
-  climate: string;
-  language: string;
-  currency: string;
+  duration?: string;
+  climate?: string;
+  language?: string;
+  currency?: string;
   idealGroupSize?: string;
   groupDescription?: string;
   topSpots?: string[];

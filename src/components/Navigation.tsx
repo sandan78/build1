@@ -40,7 +40,7 @@ export const Navigation = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-border/50">
-      <style jsx>{`
+      <style>{`
         .animated-nav {
           position: relative;
           display: flex;
@@ -217,9 +217,9 @@ export const Navigation = () => {
             <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-blue-700 rounded-lg flex items-center justify-center shadow-lg">
               <MapPin className="w-5 h-5 text-white" />
             </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 via-emerald-400 to-teal-500 bg-clip-text text-transparent">
               Emotion Escapes 
-            </span> 
+            </span>
           </Link>
 
           {/* Desktop Navigation */}

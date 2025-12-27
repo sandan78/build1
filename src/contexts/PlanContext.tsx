@@ -10,6 +10,12 @@ export interface PlanStepsData {
   report?: { summary: string; rating: number };
 }
 
+type CulturalHighlight = string | {
+  name: string;
+  description: string;
+  category: "people" | "livelihood" | "culture" | "tradition" | "lifestyle" | "art" | "festival";
+};
+
 export interface SelectedPlan {
   id: string;
   name: string;
@@ -18,7 +24,7 @@ export interface SelectedPlan {
   emotionalMatch: string;
   matchPercentage: number;
   description: string;
-  culturalHighlights: string[];
+  culturalHighlights: CulturalHighlight[];
   safetyLevel: 'low' | 'medium' | 'high';
   bestTime: string;
   priceRange: '$' | '$$' | '$$$';
